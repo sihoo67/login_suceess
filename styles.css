@@ -1,0 +1,117 @@
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #00b3ff, #ff00f7); /* 사이버펑크 느낌의 그라디언트 배경 */
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    font-size: 18px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.neon-border {
+    border: 2px solid #00ffff;
+    padding: 40px 60px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.8);
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.neon-border:hover {
+    box-shadow: 0 0 50px rgba(0, 255, 255, 1), 0 0 60px rgba(255, 0, 255, 1);
+}
+
+h1 {
+    font-size: 60px;
+    letter-spacing: 5px;
+    text-shadow: 0 0 25px rgba(0, 255, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.8);
+    animation: neon 1.5s ease-in-out infinite alternate;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.7);
+    animation: flicker 2s linear infinite alternate;
+}
+
+.button {
+    background: rgba(0, 255, 255, 0.2);
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    padding: 18px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.8);
+}
+
+.button:hover {
+    background: #00ffff;
+    color: #0c0c0c;
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 1), 0 0 50px rgba(255, 0, 255, 1);
+}
+
+/* 네온 효과 애니메이션 */
+@keyframes neon {
+    0% {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(0, 255, 255, 1), 0 0 60px rgba(255, 0, 255, 1);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.8);
+    }
+}
+
+/* 불규칙한 깜빡임 효과 */
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    75% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
